@@ -69,11 +69,11 @@ void XCIConverter::process()
     QFile::remove(output);
     dir.mkpath(output+".tmp");
     QStringList args;
-    args << "-x" << "-k" << "keys.txt" << "-t" << "xci" << "--outdir="+output+".tmp" << input;
+    args << "-x" << "-k" << QApplication::applicationDirPath()+"/keys.txt" << "-t" << "xci" << "--outdir="+output+".tmp" << input;
     QProcess process;
-    process.start("hactool", args);
+    process.start(QApplication::applicationDirPath()+"/hactool", args);
     process.waitForFinished(-1);
-    QFile logfile("log.dat");
+    QFile logfile(QApplication::applicationDirPath()+"/log.dat");
     logfile.open(QIODevice::ReadWrite);
     QDataStream log(&logfile);
     log << process.program() << process.arguments() << process.readAll();
@@ -101,11 +101,11 @@ void NCAConverter::process()
     QDir dir(output);
     dir.mkpath(output+"/exefs");
     QStringList args;
-    args << "-x" << "-k" << "keys.txt" << "-t" << "nca" << "--romfs="+output+"/romfs" << "--exefsdir="+output+"/exefs" << input;
+    args << "-x" << "-k" << QApplication::applicationDirPath()+"/keys.txt" << "-t" << "nca" << "--romfs="+output+"/romfs" << "--exefsdir="+output+"/exefs" << input;
     QProcess process;
-    process.start("hactool", args);
+    process.start(QApplication::applicationDirPath()+"/hactool", args);
     process.waitForFinished(-1);
-    QFile logfile("log.dat");
+    QFile logfile(QApplication::applicationDirPath()+"/log.dat");
     logfile.open(QIODevice::ReadWrite);
     QDataStream log(&logfile);
     log << process.program() << process.arguments() << process.readAll();
@@ -339,20 +339,20 @@ void MainWindow::on_pushButton_layeredfs_delete_clicked()
 bool MainWindow::toolsExist()
 {
 #if defined(Q_OS_WIN)
-    const QString hactool="hactool.exe";
+    const QString hactool=QApplication::applicationDirPath()+"/hactool.exe";
 #else
-    const QString hactool="hactool";
+    const QString hactool=QApplication::applicationDirPath()+"/hactool";
 #endif
 
     if(QFile::exists(hactool)==false)
     {
-        QMessageBox::critical(this, "Error", "Could not find "+hactool+" in \""+QDir::currentPath()+"\".");
+        QMessageBox::critical(this, "Error", "Could not find "+hactool+" in \""+QApplication::applicationDirPath()+"\".");
         return false;
     }
 
-    if(QFile::exists("keys.txt")==false)
+    if(QFile::exists(QApplication::applicationDirPath()+"/keys.txt")==false)
     {
-        QMessageBox::critical(this, "Error", "Could not find keys.txt in \""+QDir::currentPath()+"\".");
+        QMessageBox::critical(this, "Error", "Could not find keys.txt in \""+QApplication::applicationDirPath()+"\".");
         ui->tabWidget->setCurrentIndex(0);
         return false;
     }
@@ -433,6 +433,6 @@ void MainWindow::on_commandLinkButton_settings_tools_makekeystxt_clicked()
 {
     QDesktopServices::openUrl(QUrl("https://gbatemp.net/threads/how-to-get-switch-keys-for-hactool-xci-decrypting.506978/"));
 #if defined(Q_OS_DARWIN)
-    QDesktopServices::openUrl(QUrl("file://"+QDir::currentPath()));
+    QDesktopServices::openUrl(QUrl("file://"+QApplication::applicationDirPath()));
 #endif
 }
