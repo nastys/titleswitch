@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/icons/title">
+        <file>res/blazblue.webp</file>
+        <file>res/fallout_shelter.webp</file>
+        <file>res/fortnite.webp</file>
+        <file>res/hulu.webp</file>
+        <file>res/kitten_squad.webp</file>
+        <file>res/octopath_traveler.webp</file>
+        <file>res/pac-man.webp</file>
+        <file>res/pinball_fx3.webp</file>
+        <file>res/stern_pinball_arcade.webp</file>
+        <file>res/the_pinball_arcade.webp</file>
+        <file>res/pokemon_quest.webp</file>
+    </qresource>
+    <qresource prefix="/anim">
+        <file>res/wait.webp</file>
+    </qresource>
+</RCC>

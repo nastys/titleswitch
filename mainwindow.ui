@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>720</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>720</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Title Switch</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>701</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab_settings">
+     <attribute name="icon">
+      <iconset theme="settings-configure">
+       <normaloff>.</normaloff>.</iconset>
+     </attribute>
+     <attribute name="title">
+      <string>Tools</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_settings_tools">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>160</y>
+        <width>231</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Tools</string>
+      </property>
+      <widget class="QCommandLinkButton" name="commandLinkButton_settings_tools_makekeystxt">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>211</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Create keys.txt</string>
+       </property>
+      </widget>
+      <widget class="QCommandLinkButton" name="commandLinkButton_settings_tools_xci2nca">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>211</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Convert XCI → NCA</string>
+       </property>
+      </widget>
+      <widget class="QCommandLinkButton" name="commandLinkButton_settings_tools_fusee_gelee">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>211</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Start Fusée Gelée</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_layeredfs">
+     <attribute name="title">
+      <string>LayeredFS</string>
+     </attribute>
+     <widget class="QCommandLinkButton" name="commandLinkButton_layeredfs_compatibility">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>560</y>
+        <width>191</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Compatibility list</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_layeredfs_target">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>540</y>
+        <width>211</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Target title</string>
+      </property>
+      <widget class="QComboBox" name="comboBox_layeredfs_target_titleid">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>191</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="currentIndex">
+        <number>6</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>Custom...</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>BlazBlue</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/blazblue.webp</normaloff>:/icons/title/res/blazblue.webp</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Fallout Shelter</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/fallout_shelter.webp</normaloff>:/icons/title/res/fallout_shelter.webp</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Fortnite</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/fortnite.webp</normaloff>:/icons/title/res/fortnite.webp</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Hulu</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/hulu.webp</normaloff>:/icons/title/res/hulu.webp</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Kitten Squad</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/kitten_squad.webp</normaloff>:/icons/title/res/kitten_squad.webp</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Octopath Traveler Demo</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/octopath_traveler.webp</normaloff>:/icons/title/res/octopath_traveler.webp</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pac-Man Vs.</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/pac-man.webp</normaloff>:/icons/title/res/pac-man.webp</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pinball FX3</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/pinball_fx3.webp</normaloff>:/icons/title/res/pinball_fx3.webp</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pokémon Quest</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/pokemon_quest.webp</normaloff>:/icons/title/res/pokemon_quest.webp</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Stern Pinball Arcade</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/stern_pinball_arcade.webp</normaloff>:/icons/title/res/stern_pinball_arcade.webp</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>The Pinball Arcade</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/title/res/the_pinball_arcade.webp</normaloff>:/icons/title/res/the_pinball_arcade.webp</iconset>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_layeredfs_target_titleid">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>191</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="inputMask">
+        <string>HHHHHHHHHHHHHHHH</string>
+       </property>
+       <property name="text">
+        <string>010096000B3EA000</string>
+       </property>
+       <property name="maxLength">
+        <number>16</number>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QCommandLinkButton" name="commandLinkButton_layeredfs_start">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>600</y>
+        <width>191</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_layeredfs_infile">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>540</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>NCA file</string>
+      </property>
+      <widget class="QLineEdit" name="lineEdit_layeredfs_infile_file">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>141</width>
+         <height>26</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_layeredfs_infile_browse">
+       <property name="geometry">
+        <rect>
+         <x>159</x>
+         <y>30</y>
+         <width>91</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Browse...</string>
+       </property>
+       <property name="icon">
+        <iconset theme="folder">
+         <normaloff>.</normaloff>.</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_layeredfs_infile_name">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>51</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Name:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_layeredfs_infile_name">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>65</y>
+         <width>191</width>
+         <height>26</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget_layeredfs_folders">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>681</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>200</number>
+      </attribute>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Target ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Target title</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Custom title</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="pushButton_layeredfs_delete">
+      <property name="geometry">
+       <rect>
+        <x>596</x>
+        <y>501</y>
+        <width>91</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Delete</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset theme="delete">
+        <normaloff>.</normaloff>.</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_autodetect">
+      <property name="geometry">
+       <rect>
+        <x>599</x>
+        <y>10</y>
+        <width>91</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Detect SD</string>
+      </property>
+      <property name="icon">
+       <iconset theme="media-flash-sd-mmc">
+        <normaloff>.</normaloff>.</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_layeredfs_browse">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>10</y>
+        <width>91</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Browse...</string>
+      </property>
+      <property name="icon">
+       <iconset theme="folder">
+        <normaloff>.</normaloff>.</iconset>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_layeredfs_path">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>481</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="hourglass">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>720</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>hourglass</zorder>
+   <zorder>tabWidget</zorder>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

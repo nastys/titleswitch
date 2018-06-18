@@ -1,0 +1,5 @@
+.directory
+*.pro.user
+*.pro.user*
+.DS_Store
+*.DS_Store
