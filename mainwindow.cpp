@@ -78,17 +78,19 @@ void XCIConverter::process()
     QDataStream log(&logfile);
     log << process.program() << process.arguments() << process.readAll();
     logfile.close();
-    QDirIterator secdir(output+".tmp/secure/");
+    QDirIterator secdir(output+".tmp/secure/", QStringList() << "*.nca", QDir::Files);
     QString largestfile;
-    QFile c;
-    int largestsize=0;
+    long long int largestsize=0;
     for(int i=0; secdir.hasNext(); i++)
     {
         secdir.next();
-        c.setFileName(secdir.filePath());
+        QFile c(secdir.filePath());
         c.open(QIODevice::ReadOnly);
         if(c.size()>largestsize)
+        {
             largestfile=secdir.filePath();
+            largestsize=c.size();
+        }
         c.close();
     }
     QFile::rename(largestfile, output);
@@ -346,7 +348,7 @@ bool MainWindow::toolsExist()
 
     if(QFile::exists(hactool)==false)
     {
-        QMessageBox::critical(this, "Error", "Could not find "+hactool+" in \""+QApplication::applicationDirPath()+"\".");
+        QMessageBox::critical(this, "Error", "Could not find hactool in \""+QApplication::applicationDirPath()+"\".");
         return false;
     }
 
@@ -432,7 +434,4 @@ void MainWindow::on_commandLinkButton_layeredfs_start_clicked()
 void MainWindow::on_commandLinkButton_settings_tools_makekeystxt_clicked()
 {
     QDesktopServices::openUrl(QUrl("https://gbatemp.net/threads/how-to-get-switch-keys-for-hactool-xci-decrypting.506978/"));
-#if defined(Q_OS_DARWIN)
-    QDesktopServices::openUrl(QUrl("file://"+QApplication::applicationDirPath()));
-#endif
 }
