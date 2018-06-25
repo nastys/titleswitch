@@ -11,8 +11,11 @@
         <file>res/stern_pinball_arcade.webp</file>
         <file>res/the_pinball_arcade.webp</file>
         <file>res/pokemon_quest.webp</file>
+        <file>res/icon.webp</file>
     </qresource>
     <qresource prefix="/anim">
-        <file>res/wait.webp</file>
+        <file>res/wait0.webp</file>
+        <file>res/wait1.webp</file>
+        <file>res/wait2.webp</file>
     </qresource>
 </RCC>

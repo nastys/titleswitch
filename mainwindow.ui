@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Maximum">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -28,21 +28,28 @@
     <height>700</height>
    </size>
   </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
   <property name="windowTitle">
    <string>Title Switch</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icons/title/res/icon.webp</normaloff>:/icons/title/res/icon.webp</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>40</y>
       <width>701</width>
-      <height>681</height>
+      <height>581</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_settings">
      <attribute name="icon">
@@ -55,10 +62,10 @@
      <widget class="QGroupBox" name="groupBox_settings_tools">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>160</y>
-        <width>231</width>
-        <height>261</height>
+        <x>210</x>
+        <y>180</y>
+        <width>271</width>
+        <height>221</height>
        </rect>
       </property>
       <property name="title">
@@ -69,12 +76,12 @@
         <rect>
          <x>10</x>
          <y>30</y>
-         <width>211</width>
+         <width>251</width>
          <height>41</height>
         </rect>
        </property>
        <property name="text">
-        <string>Create keys.txt</string>
+        <string>Create keys.txt...</string>
        </property>
       </widget>
       <widget class="QCommandLinkButton" name="commandLinkButton_settings_tools_xci2nca">
@@ -82,30 +89,53 @@
         <rect>
          <x>10</x>
          <y>80</y>
-         <width>211</width>
+         <width>251</width>
          <height>41</height>
         </rect>
        </property>
        <property name="text">
-        <string>Convert XCI → NCA</string>
+        <string>Convert XCI → NCA...</string>
        </property>
       </widget>
-      <widget class="QCommandLinkButton" name="commandLinkButton_settings_tools_fusee_gelee">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
+      <widget class="QCommandLinkButton" name="commandLinkButton_settings_tools_patchMainNpdm">
        <property name="geometry">
         <rect>
          <x>10</x>
          <y>130</y>
-         <width>211</width>
+         <width>251</width>
          <height>41</height>
         </rect>
        </property>
        <property name="text">
-        <string>Start Fusée Gelée</string>
+        <string>Patch main.npdm (LayeredFS)...</string>
        </property>
       </widget>
+      <widget class="QCommandLinkButton" name="commandLinkButton_settings_tools_saveLog">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>180</y>
+         <width>251</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save log file as...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton_settings_about">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>515</y>
+        <width>80</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>About...</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_layeredfs">
@@ -115,27 +145,27 @@
      <widget class="QCommandLinkButton" name="commandLinkButton_layeredfs_compatibility">
       <property name="geometry">
        <rect>
-        <x>500</x>
-        <y>560</y>
+        <x>470</x>
+        <y>450</y>
         <width>191</width>
         <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>Compatibility list</string>
+       <string>Compatibility list...</string>
       </property>
      </widget>
      <widget class="QGroupBox" name="groupBox_layeredfs_target">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>540</y>
-        <width>211</width>
-        <height>101</height>
+        <x>10</x>
+        <y>450</y>
+        <width>411</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="title">
-       <string>Target title</string>
+       <string>Target title ID</string>
       </property>
       <widget class="QComboBox" name="comboBox_layeredfs_target_titleid">
        <property name="geometry">
@@ -257,8 +287,8 @@
       <widget class="QLineEdit" name="lineEdit_layeredfs_target_titleid">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>70</y>
+         <x>210</x>
+         <y>30</y>
          <width>191</width>
          <height>26</height>
         </rect>
@@ -276,6 +306,22 @@
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QCheckBox" name="checkBox_layeredfs_patchingEnabled">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>191</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Patch main.npdm</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
      </widget>
      <widget class="QCommandLinkButton" name="commandLinkButton_layeredfs_start">
       <property name="enabled">
@@ -283,86 +329,23 @@
       </property>
       <property name="geometry">
        <rect>
-        <x>500</x>
-        <y>600</y>
+        <x>470</x>
+        <y>500</y>
         <width>191</width>
         <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>Start</string>
+       <string>Install backup</string>
       </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_layeredfs_infile">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>540</y>
-        <width>261</width>
-        <height>101</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>NCA file</string>
-      </property>
-      <widget class="QLineEdit" name="lineEdit_layeredfs_infile_file">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>30</y>
-         <width>141</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_layeredfs_infile_browse">
-       <property name="geometry">
-        <rect>
-         <x>159</x>
-         <y>30</y>
-         <width>91</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Browse...</string>
-       </property>
-       <property name="icon">
-        <iconset theme="folder">
-         <normaloff>.</normaloff>.</iconset>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_layeredfs_infile_name">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>70</y>
-         <width>51</width>
-         <height>18</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Name:</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_layeredfs_infile_name">
-       <property name="geometry">
-        <rect>
-         <x>60</x>
-         <y>65</y>
-         <width>191</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
      </widget>
      <widget class="QTableWidget" name="tableWidget_layeredfs_folders">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>40</y>
+        <y>10</y>
         <width>681</width>
-        <height>491</height>
+        <height>391</height>
        </rect>
       </property>
       <property name="editTriggers">
@@ -371,8 +354,11 @@
       <property name="selectionMode">
        <enum>QAbstractItemView::SingleSelection</enum>
       </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>200</number>
+       <number>226</number>
       </attribute>
       <attribute name="horizontalHeaderStretchLastSection">
        <bool>true</bool>
@@ -399,9 +385,9 @@
      <widget class="QPushButton" name="pushButton_layeredfs_delete">
       <property name="geometry">
        <rect>
-        <x>596</x>
-        <y>501</y>
-        <width>91</width>
+        <x>540</x>
+        <y>410</y>
+        <width>101</width>
         <height>26</height>
        </rect>
       </property>
@@ -422,53 +408,205 @@
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_autodetect">
+     <widget class="QPushButton" name="pushButton_layeredfs_setTarget">
       <property name="geometry">
        <rect>
-        <x>599</x>
-        <y>10</y>
-        <width>91</width>
+        <x>420</x>
+        <y>410</y>
+        <width>101</width>
         <height>26</height>
        </rect>
       </property>
       <property name="text">
-       <string>Detect SD</string>
-      </property>
-      <property name="icon">
-       <iconset theme="media-flash-sd-mmc">
-        <normaloff>.</normaloff>.</iconset>
+       <string>Set target</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_layeredfs_browse">
+     <widget class="QPushButton" name="pushButton_layeredfs_explore">
       <property name="geometry">
        <rect>
-        <x>500</x>
-        <y>10</y>
-        <width>91</width>
+        <x>180</x>
+        <y>410</y>
+        <width>101</width>
         <height>26</height>
        </rect>
       </property>
       <property name="text">
-       <string>Browse...</string>
-      </property>
-      <property name="icon">
-       <iconset theme="folder">
-        <normaloff>.</normaloff>.</iconset>
+       <string>Explore...</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_layeredfs_path">
+     <widget class="QPushButton" name="pushButton_layeredfs_rename">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>410</y>
+        <width>101</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Rename...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_layeredfs_refresh">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>410</y>
+        <width>101</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_plague">
+     <attribute name="title">
+      <string>Plague</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_plague_explore">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>460</y>
+        <width>101</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Explore...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_plague_delete">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>460</y>
+        <width>101</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Delete</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset theme="delete">
+        <normaloff>.</normaloff>.</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QCommandLinkButton" name="commandLinkButton_plague_compatibility">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>500</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Compatibility list...</string>
+      </property>
+     </widget>
+     <widget class="QCommandLinkButton" name="commandLinkButton_plague_start">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>500</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Install backup</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget_plague_folders">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>481</width>
+        <width>681</width>
+        <height>441</height>
+       </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Backup</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QCommandLinkButton" name="commandLinkButton_plague_migrate">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>500</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Migrate from LayeredFS</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_plague_rename">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>460</y>
+        <width>101</width>
         <height>26</height>
        </rect>
       </property>
-      <property name="readOnly">
-       <bool>true</bool>
+      <property name="text">
+       <string>Rename...</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_plague_refresh">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>460</y>
+        <width>101</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+     </widget>
+     <zorder>commandLinkButton_plague_compatibility</zorder>
+     <zorder>commandLinkButton_plague_start</zorder>
+     <zorder>tableWidget_plague_folders</zorder>
+     <zorder>pushButton_plague_delete</zorder>
+     <zorder>pushButton_plague_explore</zorder>
+     <zorder>commandLinkButton_plague_migrate</zorder>
+     <zorder>pushButton_plague_rename</zorder>
+     <zorder>pushButton_plague_refresh</zorder>
     </widget>
    </widget>
    <widget class="QLabel" name="hourglass">
@@ -480,6 +618,12 @@
       <height>700</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 128);</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -487,8 +631,163 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_autodetect">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>10</y>
+      <width>91</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Detect SD</string>
+    </property>
+    <property name="icon">
+     <iconset theme="media-flash-sd-mmc">
+      <normaloff>.</normaloff>.</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_layeredfs_browse">
+    <property name="geometry">
+     <rect>
+      <x>521</x>
+      <y>10</y>
+      <width>91</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Browse...</string>
+    </property>
+    <property name="icon">
+     <iconset theme="folder">
+      <normaloff>.</normaloff>.</iconset>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_layeredfs_path">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>10</y>
+      <width>501</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_layeredfs_infile">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>620</y>
+      <width>701</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Backup file</string>
+    </property>
+    <widget class="QLineEdit" name="lineEdit_layeredfs_infile_file">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>131</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_layeredfs_infile_browse">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>30</y>
+       <width>91</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Browse...</string>
+     </property>
+     <property name="icon">
+      <iconset theme="folder">
+       <normaloff>.</normaloff>.</iconset>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_layeredfs_infile_name">
+     <property name="geometry">
+      <rect>
+       <x>475</x>
+       <y>35</y>
+       <width>51</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Name:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_layeredfs_infile_name">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>30</y>
+       <width>161</width>
+       <height>26</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_layeredfs_infile_titlekey">
+     <property name="geometry">
+      <rect>
+       <x>255</x>
+       <y>35</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Titlekey:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_layeredfs_infile_titlekey">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>30</y>
+       <width>161</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="inputMask">
+      <string>HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</string>
+     </property>
+     <property name="maxLength">
+      <number>32</number>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
    <zorder>hourglass</zorder>
    <zorder>tabWidget</zorder>
+   <zorder>pushButton_autodetect</zorder>
+   <zorder>pushButton_layeredfs_browse</zorder>
+   <zorder>lineEdit_layeredfs_path</zorder>
+   <zorder>groupBox_layeredfs_infile</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
