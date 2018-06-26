@@ -35,3 +35,5 @@ FORMS += \
 
 RESOURCES += \
     resources.qrc
+
+ICON = title_switch.icns
