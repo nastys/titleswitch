@@ -346,8 +346,8 @@ void MainWindow::on_pushButton_autodetect_clicked()
             ui->lineEdit_layeredfs_path->setText(QString(c)+":/");
             ui->commandLinkButton_layeredfs_start->setEnabled(true);
             ui->commandLinkButton_plague_start->setEnabled(true);
-            if(QFile::exists(sd_folder.filePath()+"/backups/")==false)
-                QDir().(sd_folder.filePath()+"/backups/");
+            if(QFile::exists(QString(c)+":/backups/")==false)
+                QDir().mkdir(QString(c)+":/backups/");
             fillTable();
             hourglass(false);
             return;

@@ -507,9 +507,9 @@
      <widget class="QCommandLinkButton" name="commandLinkButton_plague_compatibility">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>240</x>
         <y>500</y>
-        <width>201</width>
+        <width>221</width>
         <height>41</height>
        </rect>
       </property>
@@ -523,9 +523,9 @@
       </property>
       <property name="geometry">
        <rect>
-        <x>490</x>
+        <x>470</x>
         <y>500</y>
-        <width>201</width>
+        <width>221</width>
         <height>41</height>
        </rect>
       </property>
@@ -565,7 +565,7 @@
        <rect>
         <x>10</x>
         <y>500</y>
-        <width>201</width>
+        <width>221</width>
         <height>41</height>
        </rect>
       </property>
